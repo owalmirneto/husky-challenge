@@ -12,9 +12,10 @@
 
 ActiveRecord::Schema[7.0].define(version: 2022_01_31_163326) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "invoices", force: :cascade do |t|
+  create_table "invoices", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "invoice_number"
     t.date "invoice_date"
     t.string "customer_name"
