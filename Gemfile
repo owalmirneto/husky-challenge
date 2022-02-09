@@ -51,20 +51,17 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
   # https://github.com/deivid-rodriguez/pry-byebug#commands
   gem 'pry-byebug', '~> 3.9'
+end
+
+group :development do
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'web-console'
   # https://github.com/rubocop-hq/rubocop-rails#usage
   gem 'rubocop-rails', '~> 2.13'
   # https://github.com/rubocop-hq/rubocop-performance#usage
   gem 'rubocop-performance', '~> 1.13'
   # https://github.com/backus/rubocop-rspec
   gem 'rubocop-rspec', '~> 2.8'
-
-  gem 'rspec-rails', '~> 5.1'
-end
-
-group :development do
-  # Use console on exceptions pages [https://github.com/rails/web-console]
-  gem 'web-console'
-
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -75,8 +72,12 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
+  # https://github.com/rspec/rspec-rails#installation
+  gem 'rspec-rails', '~> 5.1'
+  # https://github.com/teamcapybara/capybara#setup
+  gem 'capybara', '~> 3.36'
+  # https://github.com/SeleniumHQ/selenium
+  gem 'selenium-webdriver', '~> 4.1'
+  # https://github.com/titusfortner/webdrivers#usage
+  gem 'webdrivers', '~> 5.0'
 end
