@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   resources :tokens
 
@@ -7,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
 
-  root "tokens#index"
+  root 'tokens#index'
 end
