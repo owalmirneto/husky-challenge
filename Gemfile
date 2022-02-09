@@ -49,6 +49,10 @@ group :test do
   gem 'rspec-rails', '~> 5.1'
   # https://github.com/teamcapybara/capybara#setup
   gem 'capybara', '~> 3.36'
+  # https://github.com/thoughtbot/factory_bot_rails
+  gem 'factory_bot_rails', '~> 6.2'
+  # https://github.com/stympy/faker
+  gem 'faker', '~> 2.19'
   # https://github.com/SeleniumHQ/selenium
   gem 'selenium-webdriver', '~> 4.1'
   # https://github.com/titusfortner/webdrivers#usage
