@@ -49,6 +49,12 @@ group :development, :test do
   gem 'pry-rails', '~> 0.3.9'
   # https://github.com/deivid-rodriguez/pry-byebug#commands
   gem 'pry-byebug', '~> 3.9'
+  # https://github.com/rubocop-hq/rubocop-rails#usage
+  gem 'rubocop-rails', '~> 2.13'
+  # https://github.com/rubocop-hq/rubocop-performance#usage
+  gem 'rubocop-performance', '~> 1.13'
+  # https://github.com/backus/rubocop-rspec
+  gem 'rubocop-rspec', '~> 2.8'
 
   gem "rspec-rails", "~> 5.1"
 end
