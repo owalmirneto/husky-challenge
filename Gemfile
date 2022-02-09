@@ -45,8 +45,11 @@ gem "bootsnap", require: false
 group :development, :test do
   # https://github.com/bkeepers/dotenv#rails
   gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # https://github.com/pry/pry-rails#usage
+  gem 'pry-rails', '~> 0.3.9'
+  # https://github.com/deivid-rodriguez/pry-byebug#commands
+  gem 'pry-byebug', '~> 3.9'
+
   gem "rspec-rails", "~> 5.1"
 end
 
