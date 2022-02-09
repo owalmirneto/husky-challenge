@@ -83,3 +83,5 @@ group :test do
   # https://github.com/titusfortner/webdrivers#usage
   gem 'webdrivers', '~> 5.0'
 end
+
+gem "simple_form", "~> 5.1"
