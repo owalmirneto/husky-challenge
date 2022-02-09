@@ -84,4 +84,5 @@ group :test do
   gem 'webdrivers', '~> 5.0'
 end
 
-gem "simple_form", "~> 5.1"
+# https://github.com/heartcombo/simple_form#bootstrap
+gem 'simple_form', '~> 5.1'
