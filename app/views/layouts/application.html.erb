@@ -11,9 +11,16 @@
   </head>
 
   <body>
-    <% if session[:current_user_token] %>
-      <p style="text-align: right"><%= link_to('Log Out', logout_invoices_path) %></p>
-    <% end %>
-    <%= yield %>
+    <main class="container">
+      <div class="text-danger"><%= notice %></div>
+
+      <% if session[:current_access_token] %>
+        <p class="text-danger">
+          <%= link_to('Log Out', logout_invoices_path) %>
+        </p>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>
