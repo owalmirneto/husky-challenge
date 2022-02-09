@@ -31,6 +31,11 @@ module HuskyChallenge
     #
     config.generators do |generator|
       generator.orm :active_record, primary_key_type: :uuid
+      generator.test_framework :rspec
+      generator.helper_specs false
+      generator.helper false
+      generator.assets false
+      generator.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
   end
 end
