@@ -36,9 +36,13 @@ echo '2500af7274898ae80b2c62be1bbbb64f' > config/master.key
 chmod 600 config/master.key
 ```
 
-3) Crie o aquivo `config/database.yml` a partir do `config/database.yml.sample`.
+3) Crie o aquivo `.env` a partir do `.env.example`.
 
-4) Configure o arquivo `config/database.yml`.
+```bash
+cp .env.example .env
+```
+
+4) Configure o arquivo `.env`.
 
 5) Execute `bin/setup`
 
