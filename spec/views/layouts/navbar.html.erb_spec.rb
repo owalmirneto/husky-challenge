@@ -34,5 +34,9 @@ describe 'layouts/_navbar' do
     it 'have link to logout' do
       expect(rendered).to have_button(t('layouts.navbar.sign_out'))
     end
+
+    it 'has a form' do
+      assert_select 'form[action=?][method=?]', sessions_path, 'post'
+    end
   end
 end
