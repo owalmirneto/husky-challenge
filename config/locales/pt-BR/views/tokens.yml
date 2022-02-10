@@ -1,6 +1,6 @@
 pt-BR:
   tokens:
     new:
-      title: 'Solicitar token'
+      title: 'Gerar token de acesso'
     form:
-      submit: 'Solicitar token'
+      submit: 'Receber token em meu e-mail'

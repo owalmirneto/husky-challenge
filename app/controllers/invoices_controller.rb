@@ -1,13 +1,6 @@
 # frozen_string_literal: true
 
-class InvoicesController < ApplicationController
-  before_action do
-    if request.format.html? && !session[:current_user_token]
-      redirect_to(root_path,
-                  notice: 'Acesso não autorizado!')
-    end
-  end
-
+class InvoicesController < AuthenticatedController
   before_action :set_invoice, only: %i[show edit update destroy]
 
   def index
@@ -61,12 +54,6 @@ class InvoicesController < ApplicationController
       format.html { redirect_to invoices_url, notice: 'Invoice was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def logout
-    session.delete(:current_user_token)
-
-    redirect_to(root_path)
   end
 
   private

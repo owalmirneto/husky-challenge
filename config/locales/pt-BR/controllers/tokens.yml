@@ -1,0 +1,4 @@
+pt-BR:
+  tokens:
+    create:
+      success: 'Acesso não autorizado!'
