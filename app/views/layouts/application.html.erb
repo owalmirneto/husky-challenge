@@ -11,9 +11,14 @@
   </head>
 
   <body>
-    <% if session[:current_user_token] %>
-      <p style="text-align: right"><%= link_to('Log Out', logout_invoices_path) %></p>
-    <% end %>
-    <%= yield %>
+    <%= render 'layouts/navbar' %>
+
+    <main class="container">
+      <% if notice.present? %>
+        <div class="alert alert-warning mt-3"><%= notice %></div>
+      <% end %>
+
+      <%= yield %>
+    </main>
   </body>
 </html>

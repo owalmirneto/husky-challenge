@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :tokens
+  root 'invoices#index'
 
-  resources :invoices do
-    collection do
-      get :logout
-    end
-  end
+  resource :sessions, only: [:new, :create, :destroy]
+  get 'sessions/:id', to: 'sessions#show', as: :session
 
-  root 'tokens#index'
+  resource :tokens, only: [:new, :create]
+
+  resources :invoices
 end

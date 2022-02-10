@@ -97,14 +97,19 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.9.1)
       concurrent-ruby (~> 1.0)
+    interactor (3.1.2)
     io-wait (0.2.1)
-    jbuilder (2.11.5)
-      actionview (>= 5.0.0)
-      activesupport (>= 5.0.0)
     jsbundling-rails (1.0.0)
       railties (>= 6.0.0)
     launchy (2.5.0)
@@ -272,7 +277,9 @@ DEPENDENCIES
   capybara (~> 3.36)
   cssbundling-rails
   dotenv-rails (~> 2.7, >= 2.7.6)
-  jbuilder
+  factory_bot_rails (~> 6.2)
+  faker (~> 2.19)
+  interactor (~> 3.1)
   jsbundling-rails
   letter_opener (~> 1.7)
   pg (~> 1.1)
@@ -287,7 +294,6 @@ DEPENDENCIES
   rubocop-rspec (~> 2.8)
   selenium-webdriver (~> 4.1)
   simple_form (~> 5.1)
-  tzinfo-data
   web-console
   webdrivers (~> 5.0)
 
