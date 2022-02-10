@@ -1,0 +1,5 @@
+pt-BR:
+  sessions:
+    create:
+      success: 'Token de acesso válido'
+      failure: 'Seu token de acesso não foi encontrado'

@@ -45,7 +45,7 @@ describe 'Request for access token' do
       let(:created_user) { User.find_by(email: user_attributes[:email]) }
 
       it 'have alert message' do
-        expect(page).to have_css('.alert', text: expected_alert_message)
+        expect(page).to have_css('.alert', text: t('tokens.create.success'))
       end
 
       it 'creates a new user' do

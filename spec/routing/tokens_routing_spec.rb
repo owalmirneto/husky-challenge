@@ -9,9 +9,5 @@ describe TokensController, type: :routing do
     it 'routes to #create' do
       expect(post: '/tokens').to route_to('tokens#create')
     end
-
-    it 'routes to #destroy' do
-      expect(delete: '/tokens').to route_to('tokens#destroy')
-    end
   end
 end

@@ -1,0 +1,6 @@
+pt-BR:
+  sessions:
+    new:
+      title: 'Login via token'
+    form:
+      submit: 'Fazer login'

@@ -16,12 +16,6 @@ class TokensController < ApplicationController
     end
   end
 
-  def destroy
-    session.delete(:current_access_token)
-
-    redirect_to(root_path)
-  end
-
   private
 
   def organizer

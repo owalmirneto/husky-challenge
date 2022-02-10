@@ -1,4 +1,4 @@
 pt-BR:
   tokens:
     create:
-      success: 'Acesso não autorizado!'
+      success: 'Token de acesso válido!'

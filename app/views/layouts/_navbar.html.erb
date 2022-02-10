@@ -13,7 +13,7 @@
 
       <div class="text-end">
         <% if user_signed_in? %>
-          <%= button_to t('.sign_out'), tokens_path, class: 'btn btn-outline-light', method: :delete %>
+          <%= button_to t('.sign_out'), sessions_path, class: 'btn btn-outline-light', method: :delete %>
         <% else %>
           <%= link_to t('.sign_in_by_token'), invoices_path, class: 'btn btn-outline-light me-2' %>
 
