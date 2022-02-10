@@ -1,5 +1,7 @@
 pt-BR:
   sessions:
-    create:
+    create: &model_user
       success: 'Token de acesso válido'
       failure: 'Seu token de acesso não foi encontrado'
+    show:
+      <<: *model_user

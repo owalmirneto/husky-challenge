@@ -17,6 +17,16 @@ class SessionsController < ApplicationController
     end
   end
 
+  def show
+    if User.exists?(access_token: params[:id])
+      session[:current_access_token] = params[:id]
+
+      redirect_to(invoices_path, notice: t('.success'))
+    else
+      redirect_to(new_sessions_url, notice: t('.failure'))
+    end
+  end
+
   def destroy
     session.delete(:current_access_token)
 

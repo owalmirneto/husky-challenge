@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'invoices#index'
 
   resource :sessions, only: [:new, :create, :destroy]
+  get 'sessions/:id', to: 'sessions#show', as: :session
 
   resource :tokens, only: [:new, :create]
 

@@ -15,7 +15,7 @@
         <% if user_signed_in? %>
           <%= button_to t('.sign_out'), sessions_path, class: 'btn btn-outline-light', method: :delete %>
         <% else %>
-          <%= link_to t('.sign_in_by_token'), invoices_path, class: 'btn btn-outline-light me-2' %>
+          <%= link_to t('.sign_in_by_token'), new_sessions_path, class: 'btn btn-outline-light me-2' %>
 
           <%= link_to t('.generate_token'), new_tokens_path, class: 'btn btn-warning' %>
         <% end %>

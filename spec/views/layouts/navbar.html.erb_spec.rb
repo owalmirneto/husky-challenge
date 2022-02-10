@@ -20,7 +20,7 @@ describe 'layouts/_navbar' do
 
   context 'when user not logged' do
     it 'have link to login' do
-      expect(rendered).to have_link(t('layouts.navbar.sign_in_by_token'), href: invoices_path)
+      expect(rendered).to have_link(t('layouts.navbar.sign_in_by_token'), href: new_sessions_path)
     end
 
     it 'have link to generate access token' do

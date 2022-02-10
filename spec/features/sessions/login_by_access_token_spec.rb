@@ -25,7 +25,7 @@ describe 'Login by access token' do
     context 'with empty user' do
       let(:user_attributes) { attributes_for(:invalid_user) }
 
-      it 'have alert message' do
+      it 'have alert failure message' do
         expect(page).to have_css('.alert', text: t('sessions.create.failure'))
       end
     end
@@ -34,7 +34,7 @@ describe 'Login by access token' do
       let(:user) { create(:user) }
       let(:user_attributes) { { access_token: user.access_token } }
 
-      it 'have alert message' do
+      it 'have alert success message' do
         expect(page).to have_css('.alert', text: t('sessions.create.success'))
       end
 
