@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :user do
     email { Faker::Internet.email }
-    access_token { Faker::Internet.password }
+    access_token { SecureRandom.urlsafe_base64 }
 
     trait :invalid do
       email { nil }
