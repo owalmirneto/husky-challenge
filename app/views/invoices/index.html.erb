@@ -4,9 +4,9 @@
   <% @invoices.each do |invoice| %>
     <%= render invoice %>
     <p>
-      <%= link_to "Show this invoice", invoice %>
+      <%= link_to 'Show this invoice', invoice %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New invoice", new_invoice_path %>
+<%= link_to 'New invoice', new_invoice_path %>
