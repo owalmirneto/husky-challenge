@@ -1,0 +1,7 @@
+pt-BR:
+  layouts:
+    navbar:
+      invoices: 'Faturas'
+      sign_out: 'Sair'
+      sign_in_by_token: 'Login via token'
+      generate_token: 'Gerar token de acesso'

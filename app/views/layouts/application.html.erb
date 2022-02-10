@@ -11,13 +11,11 @@
   </head>
 
   <body>
-    <main class="container">
-      <div class="text-danger"><%= notice %></div>
+    <%= render 'layouts/navbar' %>
 
-      <% if session[:current_access_token] %>
-        <p class="text-danger">
-          <%= link_to('Log Out', logout_invoices_path) %>
-        </p>
+    <main class="container">
+      <% if notice.present? %>
+        <div class="alert alert-warning mt-3"><%= notice %></div>
       <% end %>
 
       <%= yield %>
