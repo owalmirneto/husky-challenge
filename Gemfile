@@ -40,6 +40,8 @@ group :development do
   gem 'rubocop-performance', '~> 1.13'
   # https://github.com/backus/rubocop-rspec
   gem 'rubocop-rspec', '~> 2.8'
+  # https://github.com/Shopify/erb-lint#installation
+  gem 'erb_lint', '~> 0.1.1', require: false
   # https://github.com/ryanb/letter_opener#rails-setup
   gem 'letter_opener', '~> 1.7'
 end
