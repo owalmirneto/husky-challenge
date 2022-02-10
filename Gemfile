@@ -61,3 +61,5 @@ end
 
 # https://github.com/heartcombo/simple_form#bootstrap
 gem 'simple_form', '~> 5.1'
+# https://github.com/collectiveidea/interactor#what-is-an-interactor
+gem 'interactor', '~> 3.1'
