@@ -1,0 +1,5 @@
+pt-BR:
+  invoices:
+    new:
+      title: 'Nova fatura'
+      back_to_list: 'Volta para lista de faturas'
