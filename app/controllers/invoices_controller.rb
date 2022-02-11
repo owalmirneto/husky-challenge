@@ -1,37 +1,30 @@
 # frozen_string_literal: true
 
 class InvoicesController < AuthenticatedController
-  before_action :set_invoice, only: %i[show edit update destroy]
+  before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   def index
     @invoices = Invoice.all
   end
 
-  def show; end
-
   def new
     @invoice = Invoice.new
   end
 
-  def edit; end
-
-  # rubocop:disable Metrics/MethodLength
   def create
     @invoice = Invoice.new(invoice_params)
 
-    respond_to do |format|
-      if @invoice.save
-        format.html do
-          redirect_to invoice_url(@invoice), notice: 'Invoice was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @invoice }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
-      end
+    if @invoice.save
+      redirect_to(@invoice, notice: t('.success'))
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
+  def edit
+  end
+
+  # rubocop:disable Metrics/MethodLength
   def update
     respond_to do |format|
       if @invoice.update(invoice_params)
@@ -46,6 +39,9 @@ class InvoicesController < AuthenticatedController
     end
   end
   # rubocop:enable Metrics/MethodLength
+
+  def show
+  end
 
   def destroy
     @invoice.destroy

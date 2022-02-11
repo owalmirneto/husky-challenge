@@ -57,34 +57,6 @@ RSpec.describe '/invoices', type: :request do
     end
   end
 
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Invoice' do
-        expect do
-          post invoices_url, params: { invoice: valid_attributes }
-        end.to change(Invoice, :count).by(1)
-      end
-
-      it 'redirects to the created invoice' do
-        post invoices_url, params: { invoice: valid_attributes }
-        expect(response).to redirect_to(invoice_url(Invoice.last))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it 'does not create a new Invoice' do
-        expect do
-          post invoices_url, params: { invoice: invalid_attributes }
-        end.to change(Invoice, :count).by(0)
-      end
-
-      it "renders a successful response (i.e. to display the 'new' template)" do
-        post invoices_url, params: { invoice: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
-
   describe 'PATCH /update' do
     context 'with valid parameters' do
       let(:new_attributes) do
