@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   resource :tokens, only: [:new, :create]
 
-  resources :invoices
+  resources :invoices, except: [:edit, :update]
 end

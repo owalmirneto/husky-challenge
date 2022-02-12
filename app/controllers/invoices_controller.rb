@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class InvoicesController < AuthenticatedController
-  before_action :set_invoice, only: [:show, :edit, :update, :destroy]
+  before_action :set_invoice, only: [:show, :destroy]
 
   def index
     @invoices = query.search(params[:term]).paginate(params[:page])
@@ -21,25 +21,6 @@ class InvoicesController < AuthenticatedController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def edit
-  end
-
-  # rubocop:disable Metrics/MethodLength
-  def update
-    respond_to do |format|
-      if @invoice.update(invoice_params)
-        format.html do
-          redirect_to invoice_url(@invoice), notice: 'Invoice was successfully updated.'
-        end
-        format.json { render :show, status: :ok, location: @invoice }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-  # rubocop:enable Metrics/MethodLength
 
   def show
   end

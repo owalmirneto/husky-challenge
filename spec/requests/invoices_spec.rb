@@ -41,44 +41,6 @@ RSpec.describe '/invoices', type: :request do
     end
   end
 
-  describe 'GET /edit' do
-    it 'renders a successful response' do
-      invoice = Invoice.create! valid_attributes
-      get edit_invoice_url(invoice)
-      expect(response).to be_successful
-    end
-  end
-
-  describe 'PATCH /update' do
-    context 'with valid parameters' do
-      let(:new_attributes) do
-        skip('Add a hash of attributes valid for your model')
-      end
-
-      it 'updates the requested invoice' do
-        invoice = Invoice.create! valid_attributes
-        patch invoice_url(invoice), params: { invoice: new_attributes }
-        invoice.reload
-        skip('Add assertions for updated state')
-      end
-
-      it 'redirects to the invoice' do
-        invoice = Invoice.create! valid_attributes
-        patch invoice_url(invoice), params: { invoice: new_attributes }
-        invoice.reload
-        expect(response).to redirect_to(invoice_url(invoice))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        invoice = Invoice.create! valid_attributes
-        patch invoice_url(invoice), params: { invoice: invalid_attributes }
-        expect(response).to be_successful
-      end
-    end
-  end
-
   describe 'DELETE /destroy' do
     it 'destroys the requested invoice' do
       invoice = Invoice.create! valid_attributes
