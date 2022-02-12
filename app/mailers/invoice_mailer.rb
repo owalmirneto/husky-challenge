@@ -4,10 +4,16 @@ class InvoiceMailer < ApplicationMailer
   def created
     @invoice = params[:invoice]
 
-    emails = @invoice.emails.to_s.split(',')
+    mail(to: emails, subject: subject_translation)
+  end
 
-    binding.pry
+  private
 
-    mail(to: emails, subject: "Invoice ##{@invoice.invoice_number}")
+  def emails
+    @invoice.emails.to_s.split(',')
+  end
+
+  def subject_translation
+    I18n.t('invoice_mailer.created.subject', number: @invoice.invoice_number)
   end
 end

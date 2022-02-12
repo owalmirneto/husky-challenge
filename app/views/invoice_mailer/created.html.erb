@@ -1,5 +1,2 @@
-<div>
-  <%= link_to('Invoice', invoice_url(@invoice)) %>
-</div>
-
-<%= @invoice.invoice_number %>
+<%= link_to(t('.link_to_invoice', number: @invoice.invoice_number),
+            invoice_url(@invoice)) %>
