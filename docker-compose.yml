@@ -10,6 +10,13 @@ services:
     volumes:
       - ./data/pg-data:/var/lib/postgresql/data
 
+  mailcatcher:
+    restart: on-failure:10
+    image: dockage/mailcatcher:0.7.1
+    ports:
+    - 1080:1080
+    - 1025:1025
+
 volumes:
   postgres-data:
     driver: local
