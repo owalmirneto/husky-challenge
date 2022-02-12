@@ -1,0 +1,12 @@
+pt-BR:
+  invoices:
+    form_filter:
+      placeholder_query: 'Procurar fatura'
+      submit: '🔎 Buscar'
+    index:
+      title: 'Minhas faturas'
+    new:
+      title: 'Nova fatura'
+      back_to_list: 'Volta para lista de faturas'
+    show:
+      title: 'Detalhes da fatura'

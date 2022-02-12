@@ -1,0 +1,14 @@
+pt-BR:
+  activerecord:
+    models:
+      invoice:
+        one: 'Fatura'
+        other: 'Faturas'
+    attributes:
+      invoice:
+        invoice_number: 'Número da fatura'
+        invoice_date: 'Data'
+        total_amount_due: 'Valor total'
+        customer_name: 'Empresa'
+        customer_notes: 'Cobrança para'
+        emails: 'E-mails'

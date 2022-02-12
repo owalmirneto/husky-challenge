@@ -1,32 +1,31 @@
-<div id="<%= dom_id invoice %>">
+<div>
   <p>
-    <strong>Invoice number:</strong>
+    <strong><%= ta(Invoice, :invoice_number) %>:</strong>
     <%= invoice.invoice_number %>
   </p>
 
   <p>
-    <strong>Invoice date:</strong>
-    <%= invoice.invoice_date %>
+    <strong><%= ta(Invoice, :formatted_invoice_date) %>:</strong>
+    <%= invoice.formatted_invoice_date %>
   </p>
 
   <p>
-    <strong>Customer name:</strong>
+    <strong><%= ta(Invoice, :customer_name) %>:</strong>
     <%= invoice.customer_name %>
   </p>
 
   <p>
-    <strong>Customer notes:</strong>
+    <strong><%= ta(Invoice, :customer_notes) %>:</strong>
     <%= invoice.customer_notes %>
   </p>
 
   <p>
-    <strong>Total amount due:</strong>
-    <%= invoice.total_amount_due %>
+    <strong><%= ta(Invoice, :formatted_total_amount_due) %>:</strong>
+    <%= invoice.formatted_total_amount_due %>
   </p>
 
   <p>
-    <strong>Emails:</strong>
+    <strong><%= ta(Invoice, :emails) %>:</strong>
     <%= invoice.emails %>
   </p>
-
 </div>

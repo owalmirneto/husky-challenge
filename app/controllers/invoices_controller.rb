@@ -1,51 +1,29 @@
 # frozen_string_literal: true
 
 class InvoicesController < AuthenticatedController
-  before_action :set_invoice, only: %i[show edit update destroy]
+  before_action :set_invoice, only: [:show, :destroy]
 
   def index
-    @invoices = Invoice.all
+    @invoices = query.search(params[:term]).paginate(params[:page])
   end
-
-  def show; end
 
   def new
     @invoice = Invoice.new
   end
 
-  def edit; end
-
-  # rubocop:disable Metrics/MethodLength
   def create
-    @invoice = Invoice.new(invoice_params)
+    organizer = CreateInvoiceOrganizer.call(params: invoice_params)
 
-    respond_to do |format|
-      if @invoice.save
-        format.html do
-          redirect_to invoice_url(@invoice), notice: 'Invoice was successfully created.'
-        end
-        format.json { render :show, status: :created, location: @invoice }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
-      end
+    if organizer.success?
+      redirect_to(organizer.invoice, notice: t('.success'))
+    else
+      @invoice = organizer.invoice
+      render :new, status: :unprocessable_entity
     end
   end
 
-  def update
-    respond_to do |format|
-      if @invoice.update(invoice_params)
-        format.html do
-          redirect_to invoice_url(@invoice), notice: 'Invoice was successfully updated.'
-        end
-        format.json { render :show, status: :ok, location: @invoice }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @invoice.errors, status: :unprocessable_entity }
-      end
-    end
+  def show
   end
-  # rubocop:enable Metrics/MethodLength
 
   def destroy
     @invoice.destroy
@@ -57,6 +35,10 @@ class InvoicesController < AuthenticatedController
   end
 
   private
+
+  def query
+    @query ||= InvoicesQuery.new
+  end
 
   def set_invoice
     @invoice = Invoice.find(params[:id])

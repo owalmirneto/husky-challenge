@@ -40,6 +40,8 @@ group :development do
   gem 'rubocop-performance', '~> 1.13'
   # https://github.com/backus/rubocop-rspec
   gem 'rubocop-rspec', '~> 2.8'
+  # https://github.com/Shopify/erb-lint#installation
+  gem 'erb_lint', '~> 0.1.1', require: false
   # https://github.com/ryanb/letter_opener#rails-setup
   gem 'letter_opener', '~> 1.7'
 end
@@ -63,3 +65,9 @@ end
 gem 'simple_form', '~> 5.1'
 # https://github.com/collectiveidea/interactor#what-is-an-interactor
 gem 'interactor', '~> 3.1'
+# https://github.com/mperham/sidekiq/wiki/Getting-Started
+gem 'sidekiq', '~> 6.4'
+# https://github.com/owalmirneto/queries#usage
+gem 'ows-queries', '~> 0.1.5'
+# https://github.com/amatsuda/active_decorator#usage
+gem 'active_decorator', '~> 1.4'

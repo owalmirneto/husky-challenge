@@ -4,4 +4,5 @@ up:
 ci:
 	bin/brakeman
 	bin/rubocop
+	bin/erblint app/views
 	bin/rspec

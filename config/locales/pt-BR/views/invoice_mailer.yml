@@ -1,0 +1,5 @@
+pt-BR:
+  invoice_mailer:
+    created:
+      subject: 'Fatura #%{number}'
+      link_to_invoice: 'Ver fatura %{number}'
