@@ -2,6 +2,8 @@
 
 describe 'invoices/index' do
   before do
+    InvoiceDecorator.include(ActionView::Helpers::NumberHelper)
+    Invoice.include(InvoiceDecorator)
     assign(:invoices, invoices)
 
     render

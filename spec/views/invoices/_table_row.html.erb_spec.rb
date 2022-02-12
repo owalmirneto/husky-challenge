@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 describe 'invoices/_table_row' do
-  before { render('invoices/table_row', invoice: invoice) }
+  before do
+    InvoiceDecorator.include(ActionView::Helpers::NumberHelper)
+    render('invoices/table_row', invoice: invoice)
+  end
 
-  let(:invoice) { create(:invoice) }
+  let(:invoice) { create(:invoice).extend(InvoiceDecorator) }
 
   context 'with existent invoices' do
     it 'have invoice invoice_number' do
@@ -11,7 +14,7 @@ describe 'invoices/_table_row' do
     end
 
     it 'have invoice invoice_date' do
-      expect(rendered).to have_css('td', text: invoice.invoice_date)
+      expect(rendered).to have_css('td', text: invoice.formatted_invoice_date)
     end
 
     it 'have invoice customer_name' do
@@ -19,7 +22,8 @@ describe 'invoices/_table_row' do
     end
 
     it 'have invoice total_amount_due' do
-      expect(rendered).to have_css('td', text: invoice.total_amount_due)
+      expect(rendered)
+        .to have_css('td', text: invoice.formatted_total_amount_due)
     end
 
     it 'have invoice emails' do
