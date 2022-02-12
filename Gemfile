@@ -67,3 +67,5 @@ gem 'simple_form', '~> 5.1'
 gem 'interactor', '~> 3.1'
 # https://github.com/mperham/sidekiq/wiki/Getting-Started
 gem 'sidekiq', '~> 6.4'
+# https://github.com/owalmirneto/queries#usage
+gem 'ows-queries', '~> 0.1.5'

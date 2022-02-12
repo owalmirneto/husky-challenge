@@ -130,6 +130,18 @@ GEM
     io-wait (0.2.1)
     jsbundling-rails (1.0.0)
       railties (>= 6.0.0)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.7.0)
@@ -163,6 +175,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
+    ows-queries (0.1.5)
+      kaminari
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
@@ -307,6 +321,7 @@ DEPENDENCIES
   interactor (~> 3.1)
   jsbundling-rails
   letter_opener (~> 1.7)
+  ows-queries (~> 0.1.5)
   pg (~> 1.1)
   propshaft
   pry-byebug (~> 3.9)
