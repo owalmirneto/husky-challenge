@@ -1,0 +1,8 @@
+<%= tag.tr(id: dom_id(invoice)) do %>
+  <td><%= invoice.invoice_number %></td>
+  <td><%= invoice.invoice_date %></td>
+  <td><%= invoice.customer_name %></td>
+  <td><%= invoice.total_amount_due %></td>
+  <td><%= invoice.emails %></td>
+  <td><%= link_to('Show this invoice', invoice) %></td>
+<% end %>

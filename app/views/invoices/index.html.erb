@@ -26,7 +26,7 @@
 
     <tbody>
       <% @invoices.each do |invoice| %>
-        <%= render(invoice) %>
+        <%= render('table_row', invoice: invoice) %>
       <% end %>
     </tbody>
   </table>
