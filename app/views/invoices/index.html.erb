@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<%= render('form_filter') %>
+
 <% if @invoices.blank? %>
   <%= records_not_found(Invoice) %>
 <% else %>
@@ -24,7 +26,7 @@
 
     <tbody>
       <% @invoices.each do |invoice| %>
-        <%= render invoice %>
+        <%= render(invoice) %>
       <% end %>
     </tbody>
   </table>

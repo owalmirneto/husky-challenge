@@ -1,5 +1,8 @@
 pt-BR:
   invoices:
+    form_filter:
+      placeholder_query: 'Procurar fatura'
+      submit: '🔎 Buscar'
     index:
       title: 'Minhas faturas'
       link_to_new: '+ Nova fatura'
