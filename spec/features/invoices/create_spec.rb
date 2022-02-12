@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe 'Request for access token' do
+describe 'Create invoices' do
   include_context 'when user logged'
 
   before { visit(new_invoice_path) }

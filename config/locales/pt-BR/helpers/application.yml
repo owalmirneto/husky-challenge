@@ -1,0 +1,3 @@
+pt-BR:
+  records:
+    not_found: 'Não encontramos %{model}'

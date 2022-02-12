@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module FeatureHelpers
+  include TranslationHelper
+
   def submit_model_form(model, attributes)
     prefix_name = model.to_s.underscore
 

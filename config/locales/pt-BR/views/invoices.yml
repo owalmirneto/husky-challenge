@@ -1,5 +1,8 @@
 pt-BR:
   invoices:
+    index:
+      title: 'Minhas faturas'
+      link_to_new: '+ Nova fatura'
     new:
       title: 'Nova fatura'
       back_to_list: 'Volta para lista de faturas'

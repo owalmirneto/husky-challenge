@@ -26,14 +26,6 @@ RSpec.describe '/invoices', type: :request do
 
   before { post tokens_url, params: { token: '123456' } }
 
-  describe 'GET /index' do
-    it 'renders a successful response' do
-      Invoice.create! valid_attributes
-      get invoices_url
-      expect(response).to be_successful
-    end
-  end
-
   describe 'GET /show' do
     it 'renders a successful response' do
       invoice = Invoice.create! valid_attributes
