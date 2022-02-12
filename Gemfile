@@ -69,3 +69,5 @@ gem 'interactor', '~> 3.1'
 gem 'sidekiq', '~> 6.4'
 # https://github.com/owalmirneto/queries#usage
 gem 'ows-queries', '~> 0.1.5'
+# https://github.com/amatsuda/active_decorator#usage
+gem 'active_decorator', '~> 1.4'
