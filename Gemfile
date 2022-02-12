@@ -65,3 +65,5 @@ end
 gem 'simple_form', '~> 5.1'
 # https://github.com/collectiveidea/interactor#what-is-an-interactor
 gem 'interactor', '~> 3.1'
+# https://github.com/mperham/sidekiq/wiki/Getting-Started
+gem 'sidekiq', '~> 6.4'
