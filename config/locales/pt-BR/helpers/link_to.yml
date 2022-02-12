@@ -1,0 +1,7 @@
+pt-BR:
+  link_to:
+    links:
+      new: '+ Criar %{model}'
+      show: 'Ver'
+      back: '< Voltar'
+      destroy: '× Apagar'
