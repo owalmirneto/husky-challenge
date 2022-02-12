@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module LinkToHelper
-  PREFIX_BUTTON_CLASS = 'btn btn-sm btn-outline-'.freeze
+  PREFIX_BUTTON_CLASS = 'btn btn-sm btn-outline-'
 
   def link_to_new(resource, url)
     text = t('link_to.links.new', model: tm(resource).downcase)

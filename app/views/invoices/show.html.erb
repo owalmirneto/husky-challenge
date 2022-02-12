@@ -1,9 +1,9 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @invoice %>
-
-<div class="text-end">
+<div class="mt-3">
   <%= link_to_back(invoices_path) %>
-
-  <%= link_to_destroy(invoice_path(@invoice)) %>
 </div>
+
+<h1><%= t('.title') %></h1>
+
+<%= render(@invoice) %>
+
+<%= link_to_destroy(@invoice) %>

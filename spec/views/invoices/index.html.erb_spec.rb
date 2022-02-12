@@ -16,8 +16,9 @@ describe 'invoices/index' do
   end
 
   it 'renders link to create invoice' do
-    expect(rendered)
-      .to have_link(t('invoices.index.link_to_new'), href: new_invoice_path)
+    label_to_new = t('link_to.links.new', model: tm(Invoice).downcase)
+
+    expect(rendered).to have_link(label_to_new, href: new_invoice_path)
   end
 
   context 'with empty invoices' do

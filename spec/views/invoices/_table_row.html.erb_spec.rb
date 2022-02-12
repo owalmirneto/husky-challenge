@@ -32,7 +32,7 @@ describe 'invoices/_table_row' do
 
     it 'have link to invoice details' do
       expect(rendered)
-        .to have_link('Show this invoice', href: invoice_path(invoice))
+        .to have_link(t('link_to.links.show'), href: invoice_path(invoice))
     end
   end
 end

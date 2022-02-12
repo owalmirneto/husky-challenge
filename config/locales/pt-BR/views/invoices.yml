@@ -5,7 +5,8 @@ pt-BR:
       submit: '🔎 Buscar'
     index:
       title: 'Minhas faturas'
-      link_to_new: '+ Nova fatura'
     new:
       title: 'Nova fatura'
       back_to_list: 'Volta para lista de faturas'
+    show:
+      title: 'Detalhes da fatura'
