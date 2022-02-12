@@ -4,7 +4,7 @@ class InvoicesController < AuthenticatedController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
   def index
-    @invoices = Invoice.all
+    @invoices = query.search(params[:term]).paginate(params[:page])
   end
 
   def new
@@ -54,6 +54,10 @@ class InvoicesController < AuthenticatedController
   end
 
   private
+
+  def query
+    @query ||= InvoicesQuery.new
+  end
 
   def set_invoice
     @invoice = Invoice.find(params[:id])
