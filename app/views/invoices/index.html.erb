@@ -4,7 +4,7 @@
   </div>
 
   <div class="col-sm-4 text-end mt-2">
-    <%= link_to(t('.link_to_new'), new_invoice_path, class: 'btn btn-primary') %>
+    <%= link_to_new(Invoice, new_invoice_path) %>
   </div>
 </div>
 
@@ -21,6 +21,7 @@
         <th><%= ta(Invoice, :customer_name) %></th>
         <th><%= ta(Invoice, :total_amount_due) %></th>
         <th><%= ta(Invoice, :emails) %></th>
+        <th></th>
       </tr>
     </thead>
 

@@ -2,8 +2,8 @@
 
 <%= render @invoice %>
 
-<div>
-  <%= link_to 'Back to invoices', invoices_path %>
+<div class="text-end">
+  <%= link_to_back(invoices_path) %>
 
-  <%= button_to 'Destroy this invoice', @invoice, method: :delete %>
+  <%= link_to_destroy(invoice_path(@invoice)) %>
 </div>
