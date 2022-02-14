@@ -3,6 +3,12 @@
 module FeatureHelpers
   include TranslationHelper
 
+  def submit_form_filter(button_name, attributes)
+    attributes.each { |attribute, value| fill_in(attribute, with: value) }
+
+    click_button(button_name)
+  end
+
   def submit_model_form(model, attributes)
     prefix_name = model.to_s.underscore
 

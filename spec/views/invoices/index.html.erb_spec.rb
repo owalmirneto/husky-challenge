@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 describe 'invoices/index' do
+  include_context 'when decorate invoice'
+
   before do
-    InvoiceDecorator.include(ActionView::Helpers::NumberHelper)
-    Invoice.include(InvoiceDecorator)
     assign(:invoices, invoices)
 
     render

@@ -1,12 +1,9 @@
 # frozen_string_literal: true
 
 describe 'invoices/_invoice' do
-  before do
-    InvoiceDecorator.include(ActionView::Helpers::NumberHelper)
-    Invoice.include(InvoiceDecorator)
+  include_context 'when decorate invoice'
 
-    render('invoices/invoice', invoice: invoice)
-  end
+  before { render('invoices/invoice', invoice: invoice) }
 
   let(:invoice) { create(:invoice) }
 
