@@ -3,6 +3,10 @@
 module FeatureHelpers
   include TranslationHelper
 
+  def random_uuid
+    SecureRandom.uuid
+  end
+
   def submit_form_filter(button_name, attributes)
     attributes.each { |attribute, value| fill_in(attribute, with: value) }
 
