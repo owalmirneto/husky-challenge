@@ -51,6 +51,8 @@ group :test do
   gem 'rspec-rails', '~> 5.1'
   # https://github.com/teamcapybara/capybara#setup
   gem 'capybara', '~> 3.36'
+  # https://github.com/DatabaseCleaner/database_cleaner
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
   # https://github.com/thoughtbot/factory_bot_rails
   gem 'factory_bot_rails', '~> 6.2'
   # https://github.com/stympy/faker
