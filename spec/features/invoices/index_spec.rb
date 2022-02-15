@@ -2,7 +2,6 @@
 
 describe 'Listing invoices' do
   include_context 'when user logged'
-  include_context 'when decorate invoice'
 
   before { visit(invoices_path) }
 

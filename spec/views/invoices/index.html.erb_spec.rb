@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 describe 'invoices/index' do
-  include_context 'when decorate invoice'
-
   before do
     assign(:invoices, invoices)
 

@@ -4,6 +4,6 @@
 
 <h1><%= t('.title') %></h1>
 
-<%= render(@invoice) %>
+<%= render(InvoiceDetailComponent.new(invoice: @invoice)) %>
 
 <%= link_to_destroy(@invoice) %>
