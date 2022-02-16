@@ -79,3 +79,5 @@ gem 'view_component', '~> 2.49'
 gem 'aws-sdk-s3', '~> 1.112'
 # https://github.com/blocknotes/prawn-html#examples
 gem 'prawn-html', '~> 0.6.2'
+# https://github.com/rails-api/active_model_serializers/tree/0-10-stable#high-level-behavior
+gem 'active_model_serializers', '~> 0.10.13'
