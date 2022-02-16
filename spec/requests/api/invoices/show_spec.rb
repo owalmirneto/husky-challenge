@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 describe '/api/v1/invoices', type: :request do
-  before { get api_v1_invoice_path(invoice_id) }
+  include_context 'when api user logged'
+
+  before do
+    get api_v1_invoice_path(invoice_id), headers: authorized_headers
+  end
 
   let(:invoice) { create(:invoice_with_pdf) }
   let(:invoice_id) { invoice.id }
@@ -40,6 +44,18 @@ describe '/api/v1/invoices', type: :request do
 
       it 'have invoice attributes' do
         expect(response_attributes).to include(*expected_response_keys)
+      end
+    end
+
+    context 'when current user not found' do
+      let(:current_user) { build(:user) }
+
+      it 'renders a unauthorized response' do
+        expect(response).to be_unauthorized
+      end
+
+      it 'renders a successful response' do
+        expect(json_body[:errors]).to eq([t('application.api.unauthorized')])
       end
     end
   end

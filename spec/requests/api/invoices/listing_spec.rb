@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 describe '/api/v1/invoices', type: :request do
+  include_context 'when api user logged'
+
   before do
     invoices
-    get api_v1_invoices_path, params: request_params
+    get api_v1_invoices_path, params: request_params,
+                              headers: authorized_headers
   end
 
   let(:invoice_quantity) { 5 }
