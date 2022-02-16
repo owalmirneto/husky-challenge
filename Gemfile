@@ -75,3 +75,5 @@ gem 'ows-queries', '~> 0.1.5'
 gem 'active_decorator', '~> 1.4'
 # https://viewcomponent.org
 gem 'view_component', '~> 2.49'
+# https://github.com/aws/aws-sdk-ruby#installation
+gem 'aws-sdk-s3', '~> 1.112'
