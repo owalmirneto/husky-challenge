@@ -35,4 +35,16 @@ module FeatureHelpers
     I18n.t(key, **options)
   end
   alias t translate
+
+  def json_body
+    return {} if response_body.blank?
+
+    @json_body ||= JSON.parse(response_body, symbolize_names: true)
+  rescue JSON::ParserError
+    {}
+  end
+
+  def response_body
+    @response_body ||= response.body
+  end
 end
