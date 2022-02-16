@@ -16,8 +16,14 @@ FactoryBot.define do
       customer_name { nil }
       customer_notes { nil }
       emails { nil }
+      file_url { nil }
+    end
+
+    trait :with_pdf do
+      file_url { Faker::Internet.url }
     end
 
     factory :invalid_invoice, traits: [:invalid]
+    factory :invoice_with_pdf, traits: [:with_pdf]
   end
 end

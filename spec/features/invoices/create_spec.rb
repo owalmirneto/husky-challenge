@@ -10,7 +10,7 @@ describe 'Create invoices' do
   end
 
   context 'when submit form' do
-    before { submit_model_form(Invoice, invoice_attributes) }
+    before { submit_model_form(Invoice, invoice_attributes.except(:file_url)) }
 
     context 'with valid invoice' do
       let(:invoice_attributes) { attributes_for(:invoice) }

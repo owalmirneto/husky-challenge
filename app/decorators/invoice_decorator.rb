@@ -20,4 +20,12 @@ module InvoiceDecorator
   def email
     super.presence || '--'
   end
+
+  def link_to_file_url
+    return if file_url.blank?
+
+    h.link_to(file_url, class: 'btn btn-sm btn-outline-info') do
+      h.t('invoice_decorator.links.pdf')
+    end
+  end
 end

@@ -5,7 +5,7 @@ describe 'Show invoice details' do
 
   before { visit(invoice_path(invoice_id)) }
 
-  let(:invoice) { create(:invoice) }
+  let(:invoice) { create(:invoice_with_pdf) }
   let(:invoice_id) { invoice.id }
 
   it 'have page title' do
@@ -24,6 +24,11 @@ describe 'Show invoice details' do
     within("form[action='#{invoice_path(invoice)}']") do
       expect(page).to have_button(t('link_to.links.destroy'))
     end
+  end
+
+  it 'have link to download PDF' do
+    expect(page)
+      .to have_link(t('invoice_decorator.links.pdf'), href: invoice.file_url)
   end
 
   context 'when invoice was not found' do
