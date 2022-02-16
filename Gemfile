@@ -77,3 +77,5 @@ gem 'active_decorator', '~> 1.4'
 gem 'view_component', '~> 2.49'
 # https://github.com/aws/aws-sdk-ruby#installation
 gem 'aws-sdk-s3', '~> 1.112'
+# https://github.com/blocknotes/prawn-html#examples
+gem 'prawn-html', '~> 0.6.2'
