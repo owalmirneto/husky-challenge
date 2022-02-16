@@ -2,6 +2,6 @@
 
 class InvoiceDetailComponent < ApplicationComponent
   def initialize(invoice:)
-    @invoice = invoice
+    @invoice = invoice.decorate
   end
 end

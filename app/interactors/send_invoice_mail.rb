@@ -4,7 +4,11 @@ class SendInvoiceMail < ApplicationInteractor
   delegate :invoice, to: :context
 
   def call
-    mailer.created.deliver_later if invoice.persisted?
+    return unless invoice.persisted?
+
+    mailer.created.deliver_later
+
+    UploadInvoiceToAwsBucketJob.perform_later(invoice.id)
   end
 
   private
