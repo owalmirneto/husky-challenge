@@ -9,14 +9,15 @@ describe '/api/v1/invoices', type: :request do
 
   let(:invoice) { create(:invoice_with_pdf) }
   let(:invoice_id) { invoice.id }
-  let(:response_data) { json_body[:data] }
-  let(:response_attributes) { json_body.dig(:data, :attributes) }
-  let(:expected_response_keys) do
-    [:'invoice-number', :'customer-name', :'customer-notes', :'file-url',
-     :'invoice-date', :'total-amount-due']
-  end
 
   describe 'GET /show' do
+    let(:response_data) { json_body[:data] }
+    let(:response_attributes) { json_body.dig(:data, :attributes) }
+    let(:expected_response_keys) do
+      [:'invoice-number', :'customer-name', :'customer-notes', :'file-url',
+       :'invoice-date', :'total-amount-due']
+    end
+
     context 'when non-existent invoice' do
       let(:invoice_id) { random_uuid }
 
@@ -46,17 +47,17 @@ describe '/api/v1/invoices', type: :request do
         expect(response_attributes).to include(*expected_response_keys)
       end
     end
+  end
 
-    context 'when current user not found' do
-      let(:current_user) { build(:user) }
+  context 'when current user not found' do
+    let(:current_user) { build(:user) }
 
-      it 'renders a unauthorized response' do
-        expect(response).to be_unauthorized
-      end
+    it 'renders a unauthorized response' do
+      expect(response).to be_unauthorized
+    end
 
-      it 'renders a successful response' do
-        expect(json_body[:errors]).to eq([t('application.api.unauthorized')])
-      end
+    it 'renders a successful response' do
+      expect(json_body[:errors]).to eq([t('application.api.unauthorized')])
     end
   end
 end
