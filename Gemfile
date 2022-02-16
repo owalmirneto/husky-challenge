@@ -51,6 +51,8 @@ group :test do
   gem 'rspec-rails', '~> 5.1'
   # https://github.com/teamcapybara/capybara#setup
   gem 'capybara', '~> 3.36'
+  # https://github.com/DatabaseCleaner/database_cleaner
+  gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
   # https://github.com/thoughtbot/factory_bot_rails
   gem 'factory_bot_rails', '~> 6.2'
   # https://github.com/stympy/faker
@@ -71,3 +73,9 @@ gem 'sidekiq', '~> 6.4'
 gem 'ows-queries', '~> 0.1.5'
 # https://github.com/amatsuda/active_decorator#usage
 gem 'active_decorator', '~> 1.4'
+# https://viewcomponent.org
+gem 'view_component', '~> 2.49'
+# https://github.com/aws/aws-sdk-ruby#installation
+gem 'aws-sdk-s3', '~> 1.112'
+# https://github.com/blocknotes/prawn-html#examples
+gem 'prawn-html', '~> 0.6.2'

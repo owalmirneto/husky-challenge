@@ -1,0 +1,4 @@
+pt-BR:
+  invoice_decorator:
+    links:
+      pdf: 'Baixar PDF da fatura'

@@ -70,7 +70,24 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    ansi (1.5.0)
     ast (2.4.2)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.554.0)
+    aws-sdk-core (3.126.1)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.525.0)
+      aws-sigv4 (~> 1.1)
+      jmespath (~> 1.0)
+    aws-sdk-kms (1.54.0)
+      aws-sdk-core (~> 3, >= 3.126.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.112.0)
+      aws-sdk-core (~> 3, >= 3.126.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.4)
+    aws-sigv4 (1.4.0)
+      aws-eventstream (~> 1, >= 1.0.2)
     better_html (1.0.16)
       actionview (>= 4.0)
       activesupport (>= 4.0)
@@ -101,6 +118,12 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.0.0)
       railties (>= 6.0.0)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     diff-lcs (1.5.0)
     digest (3.1.0)
     dotenv (2.7.6)
@@ -130,6 +153,7 @@ GEM
       concurrent-ruby (~> 1.0)
     interactor (3.1.2)
     io-wait (0.2.1)
+    jmespath (1.6.0)
     jsbundling-rails (1.0.0)
       railties (>= 6.0.0)
     kaminari (1.2.2)
@@ -157,6 +181,7 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.7.1)
     minitest (5.15.0)
     msgpack (1.4.4)
     net-imap (0.2.3)
@@ -175,14 +200,29 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.1)
+      mini_portile2 (~> 2.7.0)
+      racc (~> 1.4)
     nokogiri (1.13.1-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.13.1-x86_64-linux)
+      racc (~> 1.4)
+    oga (3.3)
+      ast
+      ruby-ll (~> 2.1)
     ows-queries (0.1.5)
       kaminari
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
+    pdf-core (0.9.0)
     pg (1.3.1)
+    prawn (2.4.0)
+      pdf-core (~> 0.9.0)
+      ttfunk (~> 1.7)
+    prawn-html (0.6.2)
+      oga (~> 3.3)
+      prawn (~> 2.4)
     propshaft (0.6.1)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -271,6 +311,9 @@ GEM
       rubocop (>= 1.7.0, < 2.0)
     rubocop-rspec (2.8.0)
       rubocop (~> 1.19)
+    ruby-ll (2.1.2)
+      ansi
+      ast
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.1.0)
@@ -288,9 +331,13 @@ GEM
     strscan (3.0.1)
     thor (1.2.1)
     timeout (0.2.0)
+    ttfunk (1.7.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
+    view_component (2.49.0)
+      activesupport (>= 5.0.0, < 8.0)
+      method_source (~> 1.0)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -308,15 +355,19 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  unknown
   x86_64-darwin-19
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   active_decorator (~> 1.4)
+  aws-sdk-s3 (~> 1.112)
   bootsnap
   brakeman (~> 5.2)
   capybara (~> 3.36)
   cssbundling-rails
+  database_cleaner (~> 2.0, >= 2.0.1)
   dotenv-rails (~> 2.7, >= 2.7.6)
   erb_lint (~> 0.1.1)
   factory_bot_rails (~> 6.2)
@@ -326,6 +377,7 @@ DEPENDENCIES
   letter_opener (~> 1.7)
   ows-queries (~> 0.1.5)
   pg (~> 1.1)
+  prawn-html (~> 0.6.2)
   propshaft
   pry-byebug (~> 3.9)
   pry-rails (~> 0.3.9)
@@ -338,6 +390,7 @@ DEPENDENCIES
   selenium-webdriver (~> 4.1)
   sidekiq (~> 6.4)
   simple_form (~> 5.1)
+  view_component (~> 2.49)
   web-console
   webdrivers (~> 5.0)
 

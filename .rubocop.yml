@@ -23,6 +23,9 @@ Layout/LineLength:
     - Rakefile
     - config/{environments,initializers}/**/*.rb
 
+Lint/MissingSuper:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
     - spec/**/*.rb

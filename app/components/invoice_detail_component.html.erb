@@ -1,0 +1,43 @@
+<div>
+  <p>
+    <strong>
+      <%= h.ta(Invoice, :invoice_number) %>:
+    </strong>
+    <%= @invoice.invoice_number %>
+  </p>
+
+  <p>
+    <strong>
+      <%= h.ta(Invoice, :invoice_date) %>:
+    </strong>
+    <%= @invoice.formatted_invoice_date %>
+  </p>
+
+  <p>
+    <strong>
+      <%= h.ta(Invoice, :customer_name) %>:
+    </strong>
+    <%= @invoice.customer_name %>
+  </p>
+
+  <p>
+    <strong>
+      <%= h.ta(Invoice, :customer_notes) %>:
+    </strong>
+    <%= @invoice.customer_notes %>
+  </p>
+
+  <p>
+    <strong>
+      <%= h.ta(Invoice, :total_amount_due) %>:
+    </strong>
+    <%= @invoice.formatted_total_amount_due %>
+  </p>
+
+  <p>
+    <strong>
+      <%= h.ta(Invoice, :emails) %>:
+    </strong>
+    <%= @invoice.emails %>
+  </p>
+</div>
