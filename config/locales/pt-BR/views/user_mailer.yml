@@ -1,0 +1,8 @@
+pt-BR:
+  user_mailer:
+    created:
+      subject: 'Seu token de acesso'
+      use_token: 'Use o seu token de acesso "%{token}" no página de Login via Token'
+      or_click_here: 'ou então clique no link abaixo para acessar sua conta diretamente.'
+      link_to_login: 'Clique aqui para acessar sua conta'
+      optional_label_link: 'Caso não consiga clicar no link acima, copie o link abaixo e cole no seu navegador:'

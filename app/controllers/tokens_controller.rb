@@ -7,9 +7,7 @@ class TokensController < ApplicationController
 
   def create
     if organizer.success?
-      session[:current_access_token] = organizer.user.access_token
-
-      redirect_to(invoices_path, notice: t('.success'))
+      redirect_to(new_sessions_path, notice: t('.success'))
     else
       @user = organizer.user
       render :new
