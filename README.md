@@ -36,7 +36,7 @@ echo '2500af7274898ae80b2c62be1bbbb64f' > config/master.key
 chmod 600 config/master.key
 ```
 
-3) Crie o aquivo `.env` a partir do `.env.example`.
+3) Crie o aquivo `.env` a partir do `.env.example` ou abra o terminal e rode:
 
 ```bash
 cp .env.example .env
@@ -44,7 +44,9 @@ cp .env.example .env
 
 4) Configure o arquivo `.env`.
 
-5) Execute `bin/setup`
+5) Execute `make up` ou `docker-compose up`
+
+6) Em um outro terminal `bin/setup`
 
 ## Desenvolvimento
 
@@ -54,8 +56,14 @@ cp .env.example .env
 bin/dev
 ```
 
-### Executando os testes
+### Preparando banco de testes
 
 ```sh
-bin/rails spec
+bin/rails db:create db:migrate RAILS_ENV=test
+```
+
+### Executando suite de testes
+
+```sh
+make ci
 ```
