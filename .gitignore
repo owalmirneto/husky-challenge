@@ -45,5 +45,8 @@
 /tmp/pg-data/*
 !/tmp/pg-data/
 !/tmp/pg-data/.keep
+/tmp/redis/*
+!/tmp/redis/
+!/tmp/redis/.keep
 
 .DS_Store
