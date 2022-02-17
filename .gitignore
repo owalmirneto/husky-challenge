@@ -42,7 +42,8 @@
 
 # Docker data folders.
 #
-data/*
-!data/.keep
+/tmp/pg-data/*
+!/tmp/pg-data/
+!/tmp/pg-data/.keep
 
 .DS_Store
