@@ -1,0 +1,19 @@
+<h1><%= t('.subject') %></h1>
+
+<div><%= t('.use_token', token: @user.access_token) %>:</div>
+
+<p><%= link_to(t('sessions.new.title'), new_sessions_url) %></p>
+
+<div><%= t('.or_click_here') %></div>
+
+<%= link_to(t('.link_to_login'), session_url(@user.access_token)) %>
+
+<hr>
+
+<small style="color:#3a3a3a">
+  <div><%= t('.optional_label_link') %></div>
+
+  <div style="color:#bababa">
+    <%= session_url(@user.access_token) %>
+  </div>
+</small>

@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
 class GenerateTokenByEmailOrganizer < ApplicationOrganizer
-  organize FindUserByEmail, GenerateTokenByUser
+  organize FindUserByEmail, GenerateTokenByUser, SendUserTokenByEmail
 end
