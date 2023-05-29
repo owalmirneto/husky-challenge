@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: <%= ENV['POSTGRES_HOST'] %>
+  pool: <%= ENV.fetch('POSTGRES_POOL', 5) %>
+  username: <%= ENV.fetch('POSTGRES_USERNAME', 'postgres') %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+development:
+  <<: *default
+  database: <%= ENV.fetch('POSTGRES_DBNAME', 'husky_challenge_development') %>
+
+test:
+  <<: *default
+  database: husky_challenge_test
+
+production:
+  <<: *default
+  database: husky_challenge_production
+  username: husky_challenge
+  password: <%= ENV["HUSKY_CHALLENGE_DATABASE_PASSWORD"] %>

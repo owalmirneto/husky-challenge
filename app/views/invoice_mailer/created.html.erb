@@ -1,1 +1,4 @@
-<%= link_to('Invoice', invoice_url(@invoice)) %>
+<%= render(InvoiceDetailComponent.new(invoice: @invoice)) %>
+
+<%= link_to(t('.link_to_invoice', number: @invoice.invoice_number),
+            invoice_url(@invoice)) %>

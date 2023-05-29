@@ -1,0 +1,6 @@
+pt-BR:
+  tokens:
+    new:
+      title: 'Gerar token de acesso'
+    form:
+      submit: 'Receber token em meu e-mail'

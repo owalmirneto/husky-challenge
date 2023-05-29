@@ -36,11 +36,17 @@ echo '2500af7274898ae80b2c62be1bbbb64f' > config/master.key
 chmod 600 config/master.key
 ```
 
-3) Crie o aquivo `config/database.yml` a partir do `config/database.yml.sample`.
+3) Crie o aquivo `.env` a partir do `.env.example` ou abra o terminal e rode:
 
-4) Configure o arquivo `config/database.yml`.
+```bash
+cp .env.example .env
+```
 
-5) Execute `bin/setup`
+4) Configure o arquivo `.env`.
+
+5) Execute `make up` ou `docker-compose up`
+
+6) Em um outro terminal `bin/setup`
 
 ## Desenvolvimento
 
@@ -50,8 +56,14 @@ chmod 600 config/master.key
 bin/dev
 ```
 
-### Executando os testes
+### Preparando banco de testes
 
 ```sh
-bin/rails spec
+bin/rails db:create db:migrate RAILS_ENV=test
+```
+
+### Executando suite de testes
+
+```sh
+make ci
 ```

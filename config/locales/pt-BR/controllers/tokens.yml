@@ -1,0 +1,4 @@
+pt-BR:
+  tokens:
+    create:
+      success: 'Enviamos o token para seu email. Insira-o no formulário a abaixo =)'

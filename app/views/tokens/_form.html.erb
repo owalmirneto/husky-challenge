@@ -1,0 +1,7 @@
+<%= simple_form_for user, url: tokens_path, as: 'token' do |f| %>
+  <div class="mb-3">
+    <%= f.input :email %>
+  </div>
+
+  <%= f.submit t('.submit'), class: 'btn btn-primary' %>
+<% end %>

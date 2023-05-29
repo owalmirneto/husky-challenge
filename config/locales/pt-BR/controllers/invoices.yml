@@ -1,0 +1,6 @@
+pt-BR:
+  invoices:
+    create:
+      success: 'Sua fatura foi criada com sucesso'
+    destroy:
+      success: 'Fatura apagada com sucesso'

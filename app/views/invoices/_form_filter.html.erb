@@ -1,0 +1,9 @@
+<%= form_with(url: invoices_path, method: :get) do |form| %>
+  <div class="input-group mb-3">
+    <%= form.text_field :term, class: 'form-control',
+                               value: params[:term],
+                               placeholder: t('.placeholder_query') %>
+
+    <%= form.submit t('.submit'), class: 'btn btn-outline-secondary' %>
+  </div>
+<% end %>

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class CreateInvoices < ActiveRecord::Migration[7.0]
   def change
-    create_table :invoices do |t|
+    create_table :invoices, id: :uuid do |t|
       t.string :invoice_number
       t.date :invoice_date
       t.string :customer_name

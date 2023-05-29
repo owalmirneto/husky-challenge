@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @invoice %>
-
-<div>
-  <%= link_to "Edit this invoice", edit_invoice_path(@invoice) %> |
-  <%= link_to "Back to invoices", invoices_path %>
-
-  <%= button_to "Destroy this invoice", @invoice, method: :delete %>
+<div class="mt-3">
+  <%= link_to_back(invoices_path) %>
 </div>
+
+<h1><%= t('.title') %></h1>
+
+<%= render(InvoiceDetailComponent.new(invoice: @invoice)) %>
+
+<%= link_to_destroy(@invoice) %>
+
+<%= @invoice.link_to_file_url %>

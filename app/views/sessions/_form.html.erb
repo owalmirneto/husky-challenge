@@ -1,0 +1,7 @@
+<%= simple_form_for user, url: sessions_path, as: 'session' do |f| %>
+  <div class="mb-3">
+    <%= f.input :access_token %>
+  </div>
+
+  <%= f.submit t('.submit'), class: 'btn btn-primary' %>
+<% end %>
